@@ -15,17 +15,8 @@ fun gameString (game : game) =
 	"Flips: " ^ Int.toString (#flips game) ^ "\n" ^
 	"Coin: " ^ coinflipString (#coin game)
 
-fun random lower upper =
-	let
-		val lower = Lua.fromInt lower
-		val upper = Lua.fromInt upper
-		val res = Lua.call Lua.Lib.math.random #[lower, upper]
-	in
-		Lua.checkInt (Vector.sub (res, 0))
-	end
-
 fun newCoin () =
-	if random 0 1 = 0
+	if Love.Math.random () < 0.5
 	then Heads
 	else Tails
 

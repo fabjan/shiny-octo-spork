@@ -39,4 +39,14 @@ structure Love = struct
 				Lua.call0 (Lua.field (graphics, "print")) #[s, x, y]
 			end
 	end
+
+    structure Math = struct
+        fun random () : real =
+            let
+                val math = Lua.field (Lua.global "love", "math")
+                val res = Lua.call1 (Lua.field (math, "random")) #[]
+            in
+                Lua.checkReal res
+            end
+    end
 end
