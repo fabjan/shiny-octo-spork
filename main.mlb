@@ -1,6 +1,7 @@
 local
 	$(SML_LIB)/basis/basis.mlb
 	$(SML_LIB)/basis/lua.mlb
+	lua.sig
 in
 	love.sml
 	game.sml

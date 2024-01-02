@@ -15,6 +15,8 @@ fun gameString (game : game) =
 	"Flips: " ^ Int.toString (#flips game) ^ "\n" ^
 	"Coin: " ^ coinflipString (#coin game)
 
+structure Love = Love (Lua)
+
 fun newCoin () =
 	if Love.Math.random () < 0.5
 	then Heads

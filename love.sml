@@ -1,4 +1,4 @@
-structure Love = struct
+functor Love (Lua : LUA) = struct
 
     fun setLoad (f : Lua.value) : unit =
         Lua.setField (Lua.global "love", "load", f)
