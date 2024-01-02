@@ -1,7 +1,10 @@
 version = 1
 
+[workspace.path-vars]
+SML_LIB = { path = "/Users/fabian/lunarml/lib/lunarml/ml" }
+
 [workspace]
-root = "main_func.mlb"
+root = "main_struct.mlb"
 
 [language.successor-ml]
 vector = true

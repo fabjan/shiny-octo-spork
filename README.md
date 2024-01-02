@@ -33,9 +33,42 @@ it can check all the code that uses it. However, this version cannot be compiled
 structure Love = Love (Lua)
 ```
 
-### Solution
+## Solution
 
 TBD?
+
+### Can we use Millet workspace path vars?
+
+After seeing this discussion https://github.com/azdavis/millet/issues/51
+
+I tried adding to `millet.toml`:
+
+```toml
+[workspace.path-vars]
+SML_LIB = { path = "/Users/fabian/lunarml/lib/lunarml/ml" }
+```
+
+But Millet still says "undefined structure: `Lua`"
+
+I also tried creating a separate `millet.mlb` (in case there was some
+shenanigans defining SML_LIB specifically):
+
+```sml
+local
+    $(LUNARMLLIB)/basis/lua.mlb
+in
+    main_struct.mlb
+end
+```
+
+With this path definition in millet.toml:
+
+```toml
+[workspace.path-vars]
+LUNARMLLIB = { path = "/Users/fabian/lunarml/lib/lunarml/ml" }
+```
+
+But Millet still says "undefined structure: `Lua`"
 
 ## Building
 
