@@ -1,4 +1,7 @@
 version = 1
 
+[workspace]
+root = "main_func.mlb"
+
 [language.successor-ml]
 vector = true

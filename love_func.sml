@@ -50,3 +50,5 @@ functor Love (Lua : LUA) = struct
             end
     end
 end
+
+structure Love = Love (Lua)
