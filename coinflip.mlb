@@ -1,7 +1,10 @@
 local
     $(SML_LIB)/basis/basis.mlb
+    lua.sig
     love.sig
     game.sig
 in
+    love.sml
+    engine.sml
     coinflip.sml
 end
