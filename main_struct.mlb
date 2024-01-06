@@ -1,8 +1,0 @@
-local
-	$(SML_LIB)/basis/basis.mlb
-	$(SML_LIB)/basis/lua.mlb
-in
-	love_struct.sml
-	game.sml
-	main.sml
-end

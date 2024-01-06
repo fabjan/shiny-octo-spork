@@ -1,12 +1,4 @@
 functor Love (Lua : LUA) = struct
-
-    fun setLoad (f : Lua.value) : unit =
-        Lua.setField (Lua.global "love", "load", f)
-    fun setUpdate (f : Lua.value) : unit =
-        Lua.setField (Lua.global "love", "update", f)
-    fun setDraw (f : Lua.value) : unit =
-        Lua.setField (Lua.global "love", "draw", f)
-
     structure Keyboard = struct
         fun isDown (key : string) : bool =
             let
@@ -50,5 +42,3 @@ functor Love (Lua : LUA) = struct
             end
     end
 end
-
-structure Love = Love (Lua)

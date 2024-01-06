@@ -1,3 +1,5 @@
+functor CoinFlip (Love : LOVE) :> GAME = struct
+
 datatype coinflip = Heads | Tails
 
 fun coinflipString Heads = "Heads"
@@ -9,6 +11,8 @@ type game = {
 	charging : bool,
 	coin : coinflip
 }
+
+type t = game
 
 fun gameString (game : game) =
 	"Time: " ^ Real.fmt (StringCvt.FIX (SOME 2)) (#time game) ^ "\n" ^
@@ -71,3 +75,5 @@ fun draw (game : game) =
 		Love.Graphics.print (gameString game) 10 30;
 		()
 	)
+
+end
